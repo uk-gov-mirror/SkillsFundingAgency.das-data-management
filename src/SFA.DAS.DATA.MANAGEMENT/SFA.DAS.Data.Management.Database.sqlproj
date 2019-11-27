@@ -128,5 +128,23 @@
     <Build Include="StoredProcedure\CreateEmployerTransferRelationshipView.sql" />
     <Build Include="Functions\Fn_ExtractPostCodeUKFromAddress.sql" />
     <Build Include="StoredProcedure\CreateTransactionLineView.sql" />
+    <Build Include="Schemas\HMRC.sql" />
+    <Build Include="Tables\HMRC_Data_Staging.sql" />
+    <Build Include="Tables\HMRC_Data_Import.sql" />
+    <Build Include="Tables\HMRC_Data_StagingHistory.sql" />
+    <Build Include="Tables\HMRC_Log_RunId.sql" />
+    <Build Include="Tables\HMRC_Log_Record_Counts.sql" />
+    <Build Include="Tables\HMRC_Log_Execution_Results.sql" />
+    <Build Include="Tables\HMRC_MIData_Live.sql" />
+    <Build Include="Tables\HMRC_Data_Staging_Rejected.sql" />
+    <Build Include="Tables\HMRC_Data_Validation_Rules.sql" />
+    <Build Include="Tables\HMRC_Log_Error_Details.sql" />
+    <Build Include="Views\HMRC_MI_Data.sql" />
+    <Build Include="StoredProcedure\HMRC_GenerateRunId.sql" />
+    <Build Include="StoredProcedure\HMRC_ImportDataFromImportToStaging.sql" />
+    <Build Include="StoredProcedure\HMRC_MergeDataStagingToLive.sql" />
+    <Build Include="StoredProcedure\HMRC_ProcessFile.sql" />
+    <Build Include="StoredProcedure\HMRC_RunValidationChecks.sql" />
+    <Build Include="StoredProcedure\HMRC_UpdateHistoryTable.sql" />
   </ItemGroup>
 </Project>

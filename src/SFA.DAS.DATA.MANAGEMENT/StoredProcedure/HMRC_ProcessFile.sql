@@ -96,7 +96,7 @@ UPDATE [HMRC].[Log_RunId]
 SET EndDateTime = getdate()
 WHERE Run_Id = @RunId
 
-TRUNCATE TABLE HMRC.Data_Import
+DELETE HMRC.Data_Import
 
 GO
 

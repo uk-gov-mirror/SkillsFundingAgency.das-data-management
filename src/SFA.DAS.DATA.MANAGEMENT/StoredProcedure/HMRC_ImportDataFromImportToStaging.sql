@@ -43,7 +43,7 @@ BEGIN
 
    SET @LogID = SCOPE_IDENTITY()
 
-   TRUNCATE TABLE HMRC.Data_Staging
+   DELETE HMRC.Data_Staging
    
    INSERT [HMRC].[Data_Staging]
            (

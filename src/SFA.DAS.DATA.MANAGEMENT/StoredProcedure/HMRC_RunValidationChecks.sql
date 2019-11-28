@@ -1,6 +1,5 @@
 ﻿
 
-
 CREATE PROCEDURE [dbo].[HMRC_RunValidationChecks]
 (@Run_Id bigint)
 AS
@@ -91,7 +90,7 @@ select @DateStamp =  CAST(CAST(YEAR(GETDATE()) AS VARCHAR)+RIGHT('0' + RTRIM(cas
 				   SET @SQL='
 				   INSERT INTO HMRC.Data_Staging_Rejected
 				  ( Record_ID ,RunId, ColumnName, TestName, ErrorMessage ) 
-				   SELECT Submission_ID,
+				   SELECT Record_ID,
 				          RunID ,
      					'''+ @ColumnName + ''' AS ColumnName, 
 						'''+ @TestName + ''' AS TestName,
@@ -149,7 +148,7 @@ print ''
 				   SET @SQL='
 				   INSERT INTO HMRC.Data_Staging_Rejected
 				  ( Record_ID,RunId, ColumnName, TestName, ErrorMessage ) 
-				   SELECT Submission_ID,
+				   SELECT Record_ID,
 				          RunID ,
      					'''+ @ColumnName + ''' AS ColumnName, 
 						'''+ @TestName + ''' AS TestName,
@@ -205,7 +204,7 @@ print ''
 				   SET @SQL='
 				   INSERT INTO HMRC.Data_Staging_Rejected
 				  ( Record_ID,RunId, ColumnName, TestName, ErrorMessage ) 
-				   SELECT Submission_ID,
+				   SELECT Record_ID,
 				          RunID ,
 						'''+ @ColumnName + ''' AS ColumnName, 
 						'''+ @TestName + ''' AS TestName,
@@ -263,7 +262,7 @@ print ''
 				SET @SQL='
 				INSERT INTO HMRC.Data_Staging_Rejected
 				 ( Record_ID,RunId,ColumnName, TestName, ErrorMessage ) 
-				 SELECT Submission_ID,
+				 SELECT Record_ID,
 				          RunID ,
 					'''+ @ColumnName + ''' AS ColumnName, 
 					'''+ @TestName + ''' AS TestName,
@@ -324,7 +323,7 @@ print ''
 			   INSERT INTO HMRC.Data_Staging_Rejected
 					  ( Record_ID,RunId,ColumnName, TestName, ErrorMessage
 					  ) 
-			   SELECT Submission_ID,
+			   SELECT Record_ID,
 				          RunID 
 					,'''+ @ColumnName + ''' AS ColumnName
 				    , '''+ @TestName + ''' AS TestName
@@ -379,7 +378,7 @@ print 'DECIMAL match test : ISDECIMAL AND Nullable Start :'
 			   INSERT INTO HMRC.Data_Staging_Rejected
 					  ( Record_ID,RunId,ColumnName, TestName, ErrorMessage
 					  ) 
-			   SELECT Submission_ID,
+			   SELECT Record_ID,
 				          RunID 
 					,'''+ @ColumnName + ''' AS ColumnName
 				    , '''+ @TestName + ''' AS TestName
@@ -438,7 +437,7 @@ print ''
 			   INSERT INTO HMRC.Data_Staging_Rejected
 					  ( Record_ID,RunId,ColumnName, TestName, ErrorMessage
 					  ) 
-			   SELECT Submission_ID,
+			   SELECT Record_ID,
 				          RunID 
 					,'''+ @ColumnName + ''' AS ColumnName
 				    , '''+ @TestName + ''' AS TestName
@@ -499,7 +498,7 @@ print ''
 				INSERT INTO HMRC.Data_Staging_Rejected
 					  ( Record_ID,RunId, ColumnName, TestName, ErrorMessage
 					  ) 
-			   SELECT Submission_ID,
+			   SELECT Record_ID,
 				          RunID 
 					,'''+ @ColumnName + ''' AS ColumnName
 				    , '''+ @TestName + ''' AS TestName
@@ -563,7 +562,7 @@ print ''
 				INSERT INTO HMRC.Data_Staging_Rejected
 					  ( Record_ID,RunId, ColumnName, TestName, ErrorMessage
 					  ) 
-			   SELECT Submission_ID,
+			   SELECT Record_ID,
 				          RunID 
 					,'''+ @ColumnName + ''' AS ColumnName
 				    , '''+ @TestName + ''' AS TestName
@@ -625,7 +624,7 @@ print ''
 				INSERT INTO HMRC.Data_Staging_Rejected
 					  ( Record_ID,RunId, ColumnName, TestName, ErrorMessage
 					  ) 
-			   SELECT Submission_ID,
+			   SELECT Record_ID,
 				          RunID 
 					,'''+ @ColumnName + ''' AS ColumnName
 				    , '''+ @TestName + ''' AS TestName
@@ -679,7 +678,7 @@ print 'DATE CHECKS IS DATE AND NOT NULLABLE COMPLETE'
 				INSERT INTO HMRC.Data_Staging_Rejected
 					  ( Record_ID,RunId, ColumnName, TestName, ErrorMessage
 					  ) 
-			   SELECT Submission_ID,
+			   SELECT Record_ID,
 				          RunID 
 					,'''+ @ColumnName + ''' AS ColumnName
 				    , '''+ @TestName + ''' AS TestName

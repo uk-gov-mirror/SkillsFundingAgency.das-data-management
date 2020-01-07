@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[CreateEmployerAccountTransfersView_LevyInd_LevyInd]
+﻿CREATE PROCEDURE [dbo].[CreateEmployerAccountTransfersView_LevyInd]
 (
    @RunId int
 )

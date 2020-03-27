@@ -6,6 +6,7 @@ AS
 -- Description: Master Stored Proc that builds AS DataMart
 -- ==========================================================
 
+
 /* Generate Run Id for Logging Execution */
 
 DECLARE @RunId int
@@ -31,6 +32,13 @@ EXEC CreateExternalTables 'usersDBConnection','Ext_Tbl_InfSch_Users','EAUser',@R
 EXEC CreateSystemExternalTables 'easAccDBConnection','Account','Acct',@RunId
 
 EXEC CreateExternalTables 'easAccDBConnection','Ext_Tbl_InfSch_Account','Acct',@RunId
+
+
+EXEC CreateSystemExternalTables 'assDBConnection','Certs','Epao',@RunId
+
+EXEC CreateExternalTables 'assDBConnection','Ext_Tbl_InfSch_Certs','Epao',@RunId
+
+
 
 EXEC UpdateCalendarMonth @RunId
 
